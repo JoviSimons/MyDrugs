@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '@mui/material/Button';
 import { DataGridPro } from '@mui/x-data-grid-pro';
 import UserService from '../services/UserService';
 

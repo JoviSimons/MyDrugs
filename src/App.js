@@ -1,8 +1,9 @@
 import './App.css';
-import LoginButton from './components/LoginButton';
-import LogoutButton from './components/LogoutButton';
-import Profile from './components/Profile';
 import { useAuth0 } from '@auth0/auth0-react'; 
+import Home from './pages/Home';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Product from './pages/Product';
+import Profile from './components/Profile';
 
 function App() {
 
@@ -12,9 +13,22 @@ function App() {
 
   return (
     <div className="App">
-      <LoginButton/>
-      <LogoutButton/>
-      <Profile/>
+      <Router>
+        <div className="App">
+          <Switch>
+              <Route exact path='/' component={Home} />
+              <Route exact path='/products'>
+                <Product/>
+              </Route>
+              <Route path='/product/:id'>
+                <Product/>
+              </Route>
+              <Route path='/profile'>
+                <Profile/>
+              </Route>
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 }
