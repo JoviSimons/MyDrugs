@@ -1,22 +1,19 @@
 import { Link } from 'react-router-dom';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
+import {Card, CardContent, CardActionArea, Button} from '@mui/material';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-const ProductList = ({ products }) => {
+const ProductList = ({ onAdd, products}) => {
   return (
     <div>
     <Container>
     <Row>
       {products.map(product => (
-        <Col md={4}>
+        <Col md={3}>
         <div key={product.id} >
-            <Link to={`/product/details`}>
+            <Link style={{ textDecoration: 'none' }} to={`/product/details`}>
                 <Card sx={{ }}>
                     <CardActionArea>
                         <CardContent>
@@ -26,6 +23,7 @@ const ProductList = ({ products }) => {
                         <Typography variant="body2" color="text.secondary">
                         { product.description }
                         </Typography>
+                        <Button onClick={() => onAdd(product)} variant="text">Add to cart</Button>
                         </CardContent>
                     </CardActionArea>
                 </Card>

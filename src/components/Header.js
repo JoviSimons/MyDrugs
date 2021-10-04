@@ -1,10 +1,9 @@
 import React from 'react';
 import {Nav, Navbar, NavDropdown} from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
-import LoginButton from './LoginButton';
-import LogoutButton from './LogoutButton';
 import { Link } from 'react-router-dom';
 import ProfileButton from './ToProfileButton';
+import AuthenticationButton from './AuthenticationButton';
 
 export default function Header(props) { 
     
@@ -25,14 +24,10 @@ export default function Header(props) {
                 <Nav>
                 <NavDropdown title="Account" id="basic-nav-dropdown">
                     <NavDropdown.Item> 
-                        <LoginButton></LoginButton>
+                        <AuthenticationButton/>
                     </NavDropdown.Item>
                     <NavDropdown.Item>
                         <ProfileButton></ProfileButton>
-                    </NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item> 
-                        <LogoutButton></LogoutButton>
                     </NavDropdown.Item>
                 </NavDropdown>
                 </Nav>
