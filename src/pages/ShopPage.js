@@ -1,8 +1,9 @@
 import React from 'react';
+import Button from '@mui/material/Button';
 import { DataGridPro } from '@mui/x-data-grid-pro';
 import UserService from '../services/UserService';
 
-class UserComponent extends React.Component {
+class Shop extends React.Component {
 
     constructor(props){
         super(props)
@@ -51,4 +52,4 @@ class UserComponent extends React.Component {
     }
 }
 
-export default UserComponent
+export default Shop
