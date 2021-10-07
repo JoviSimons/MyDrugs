@@ -7,7 +7,7 @@ import Basket from '../components/Basket';
 
 const Product = () => {
 
-    const { data: products, error, isPending } = useFetch("http://localhost:8080/products");
+    const { data: products, error, isPending } = useFetch("http://localhost:9000/MyDrugs/products");
     const [cartItems, setCartItems] = useState([]);
    
     const onAdd = (product) => {
