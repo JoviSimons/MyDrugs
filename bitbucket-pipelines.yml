@@ -5,14 +5,12 @@
 image: atlassian/default-image:2
 
 pipelines:
-  default:
-    - parallel:
-      - step:
-          name: 'Build and Test'
-          script:
-            - npm install
-            - npm test
-      - step:
-          name: 'Lint'
-          script:
-            - echo "Your linting goes here..."
+   branches:
+     master:
+     - step:
+        script:
+        - echo On master push
+     development:
+     - step:
+        script:
+         - pipe: sonarsource/sonarcloud-scan:1.3.0
