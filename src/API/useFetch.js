@@ -7,7 +7,7 @@ const useFetch = (url) => {
 
 
 useEffect(() => {
-        fetch(url) //custom url so you can reuse it
+        fetch(url) 
         .then(res => {
             if(!res.ok) {
                 throw Error('could not fetch data');

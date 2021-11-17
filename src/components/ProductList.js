@@ -12,7 +12,7 @@ const ProductList = ({ onAdd, products}) => {
     <Row>
       {products.map(product => (
         <Col md={3}>
-        <div key={product.id} >
+        <div title='card' key={product.id} >
             <Link style={{ textDecoration: 'none' }} to={`/product/details`}>
                 <Card sx={{ }}>
                     <CardActionArea>
