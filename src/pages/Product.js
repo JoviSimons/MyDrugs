@@ -7,7 +7,10 @@ import Basket from '../components/Basket';
 
 const Product = () => {
 
-    const { data: products, error, isPending } = useFetch("https://product-service.azurewebsites.net/MyDrugs/products");
+  const devUrl = "https://product-service.azurewebsites.net/MyDrugs/products"
+  const localUrl = "http://localhost:9000/MyDrugs/products"
+
+    const { data: products, error, isPending } = useFetch(localUrl);
     const [cartItems, setCartItems] = useState([]);
    
     const onAdd = (product) => {
