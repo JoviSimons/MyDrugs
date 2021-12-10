@@ -15,5 +15,4 @@ pipelines:
      development:
      - step:
         script:
-         - pipe: sonarsource/sonarcloud-scan:1.2.1
-         - pipe: sonarsource/sonarcloud-quality-gate:0.1.4
+        - echo on dev push
