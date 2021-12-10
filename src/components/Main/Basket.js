@@ -1,8 +1,8 @@
 import React from 'react';
 import {Button} from '@mui/material';
 
-export default function Basket(props) { 
-    const {cartItems,onAdd, onRemove} = props;
+const Basket = (props) => { 
+    const {cartItems, addToBasket, removeFromBasket} = props;
     return(
     <div>
         <h3>Basket</h3>
@@ -12,10 +12,10 @@ export default function Basket(props) {
                 <div key={item.id}>
                         { item.name }
 
-                        <Button variant="text" onClick={() => onAdd(item)}>
+                        <Button variant="text" onClick={() => addToBasket(item)}>
                             +
                         </Button>
-                        <Button variant="text" onClick={() => onRemove(item)}>
+                        <Button variant="text" onClick={() => removeFromBasket(item)}>
                             -
                         </Button>
                         {item.qty} x ${item.price}
@@ -26,3 +26,5 @@ export default function Basket(props) {
     
     )
 }
+
+export default Basket

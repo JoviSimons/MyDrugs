@@ -1,37 +1,13 @@
 import React from "react";
 import { useState, useEffect } from 'react';
-import Basket from '../components/Basket';
-import DrugType from '../components/DrugType';
+import DrugType from '../components/Drug/DrugType';
 import axios from "axios";
 
-const Product = () => {
+const Product = (props) => {
 
+  const {addToBasket} = props
   const localUrl = "http://localhost:9000/MyDrugs/"
-  const [cartItems, setCartItems] = useState([]);
-   
-  const onAdd = (product) => {
-      const exist = cartItems.find(x => x.id === product.id);
-      if(exist){
-          setCartItems(cartItems.map(x => x.id === product.id ? {...exist, qty: exist.qty +1} : x
-              )
-          );
-      }
-      else{
-          setCartItems([...cartItems, {...product, qty: 1}])
-      }
-  };
-  const onRemove = (product) => {
-      const exist = cartItems.find((x) => x.id === product.id);
-      if (exist.qty === 1) {
-        setCartItems(cartItems.filter((x) => x.id !== product.id));
-      } else {
-        setCartItems(
-          cartItems.map((x) =>
-            x.id === product.id ? { ...exist, qty: exist.qty - 1 } : x
-          )
-        );
-      }
-    };
+
 
   const [drugTypes, setDrugType] = useState(null);
 
@@ -50,8 +26,7 @@ const Product = () => {
   })
         return (
             <div>             
-            <Basket onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} ></Basket>
-            { drugTypes && <DrugType onAdd={onAdd} drugTypes={drugTypes}/> }
+            { drugTypes && <DrugType onAdd={addToBasket} drugTypes={drugTypes}/> }
             </div>
         )
 }

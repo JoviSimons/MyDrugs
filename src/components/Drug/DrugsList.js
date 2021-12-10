@@ -1,9 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom';
-import {Card, CardContent, CardActionArea, Button} from '@mui/material';
-import Typography from '@mui/material/Typography';
+import {Card, CardContent, Button, Typography} from '@mui/material';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -19,7 +17,7 @@ const DrugsList = (props) => {
 
     useEffect(() => {
         fetchDrugs(drugType.id)
-    }, [])
+    })
 
     const fetchDrugs = (id) => 
     axios.get(localUrl+"products/category/"+id)
@@ -40,21 +38,17 @@ const DrugsList = (props) => {
             {drugs && drugs.map(drug => (
                 <Col md={3}>
                     <div title='card' key={drug.id} >
-                        <Link style={{ textDecoration: 'none' }} to={`/product/details`}>
-                            <Card sx={{ }}>
-                                <CardActionArea>
-                                    <CardContent>
-                                        <Typography gutterBottom variant="h5" component="div">
-                                            { drug.name }
-                                        </Typography>
-                                        <Typography variant="body2" color="text.secondary">
-                                            { drug.description }
-                                        </Typography>
-                                            <Button onClick={() => onAdd(drug)} variant="text">Add to cart</Button>
-                                    </CardContent>
-                                </CardActionArea>
-                            </Card>
-                        </Link>
+                        <Card sx={{ }}>
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                    { drug.name }
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary">
+                                    { drug.description }
+                                </Typography>
+                                    <Button onClick={() => onAdd(drug)} variant="text">Add to cart</Button>
+                            </CardContent>
+                        </Card>
                     </div>
                 </Col>
                 ))

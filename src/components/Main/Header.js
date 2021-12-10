@@ -2,8 +2,8 @@ import React from 'react';
 import {Nav, Navbar, NavDropdown} from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import { Link } from 'react-router-dom';
-import ProfileButton from './ToProfileButton';
-import AuthenticationButton from './AuthenticationButton';
+import ProfileButton from '../ToProfileButton';
+import AuthenticationButton from '../Auth/AuthenticationButton';
 
 export default function Header(props) { 
     
