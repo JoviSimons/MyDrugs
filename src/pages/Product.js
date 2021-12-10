@@ -6,7 +6,6 @@ import axios from "axios";
 
 const Product = () => {
 
-  const devUrl = "https://product-service.azurewebsites.net/MyDrugs/products"
   const localUrl = "http://localhost:9000/MyDrugs/"
   const [cartItems, setCartItems] = useState([]);
    
