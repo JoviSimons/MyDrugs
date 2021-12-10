@@ -17,9 +17,6 @@ export default function Header(props) {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                    <Link style={{ textDecoration: 'none', color: 'black' }} to={`/products`}>
-                        Products
-                    </Link>
                 </Nav>
                 <Nav>
                 <NavDropdown title="Account" id="basic-nav-dropdown">
