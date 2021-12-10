@@ -15,4 +15,4 @@ pipelines:
      development:
      - step:
         script:
-        - npm test
+        - echo on dev push
