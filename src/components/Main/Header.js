@@ -4,9 +4,13 @@ import Container from 'react-bootstrap/Container';
 import { Link } from 'react-router-dom';
 import ProfileButton from '../ToProfileButton';
 import AuthenticationButton from '../Auth/AuthenticationButton';
+import { Button } from '@mui/material';
+
 
 export default function Header(props) { 
-    
+
+    const {cartItems} = props
+
     return (
         <header className="block row center">
             <Navbar bg="light" expand="lg">
@@ -24,7 +28,13 @@ export default function Header(props) {
                         <AuthenticationButton/>
                     </NavDropdown.Item>
                     <NavDropdown.Item>
-                        <ProfileButton></ProfileButton>
+                        <ProfileButton/>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                        <Link style={{ textDecoration: 'none' }} to={`/basket`}>
+                            <Button variant="text">Basket</Button> 
+                            {cartItems.length}
+                        </Link>
                     </NavDropdown.Item>
                 </NavDropdown>
                 </Nav>

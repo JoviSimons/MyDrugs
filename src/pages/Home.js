@@ -51,7 +51,7 @@ const Home = () => {
         return (
             <div>
                 <Router>
-                    <Header></Header>
+                    <Header cartItems={cartItems}/>
                     <div className="App">
                     <Switch>
                         <Route exact path='/' render={() => (<Product addToBasket={addToBasket} cartItems={cartItems}/>)}/>
